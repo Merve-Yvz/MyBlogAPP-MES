@@ -1,0 +1,65 @@
+﻿@model List<BlogAPP.Models.Blog>
+
+<div class="bg-black">
+    <h1 class="text-center bg-dark text-light p-1 text-uppercase">WELCOME @ViewBag.UserFullName!</h1>
+
+<div class="container-fluid" style="padding: 0;">
+        <div style="padding: 0; margin: 0; width: 100%;">
+            <img src="/Homeimage.gif" style="width: 100%; display: block; object-fit: cover;">
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container">
+    <h1 class="text-center">Latest 3 Blogs</h1>
+    <div class="row justify-content-center">
+        @if (Model != null)
+        {
+            @foreach (var blog in Model)
+            {
+                @if(blog.BlogStatus){
+               
+                    <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-img-top position-relative">
+                                <span class="fs-4 ps-3 pe-2 position-absolute" style="color:#1e2a5e; background-color:#f67348">@blog.Category.CategoryName</span>
+                                <img src="@blog.BlogImage" class="card-img-top" style="height: 300px; object-fit: cover; border-radius:0;" />
+
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <p class="card-title text-end mt-2">@blog.Created_at.ToShortDateString() <i class="bi bi-calendar-heart"></i></p>
+                                <p class="card-title h5 text-dark opacity-75 text-uppercase text-center flex-grow-1">
+                                    @blog.BlogTitle
+                                </p>
+                                <p class="card-title text-warning text-center">
+                                    by <b>@blog.User.UserName @blog.User.UserSurname</b> 
+                                </p>
+                                @{
+                                    var shortcontent = blog.BlogContent;
+                                }
+
+                                @if (!string.IsNullOrEmpty(shortcontent) && shortcontent.Length > 190)
+                                {
+                                // İçeriği kısalt
+                                    var truncatedContent = blog.BlogContent.Substring(0, 190);
+                                    var lastSpaceIndex = truncatedContent.LastIndexOf(" ");
+
+                                    shortcontent = lastSpaceIndex > 0
+                                    ? shortcontent.Substring(0, lastSpaceIndex)
+                                : truncatedContent;
+                                    shortcontent += ". . .";
+                                }
+                                <p class="text-dark text-center">@Html.Raw(shortcontent)</p>
+                            </div>
+                            <div class="card-footer mt-auto">
+                                <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@blog.BlogID" class="btn btn-primary bg-gradient border-0 form-control">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

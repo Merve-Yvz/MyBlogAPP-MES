@@ -1,0 +1,63 @@
+﻿@{
+    var isAdminLayout = (bool)ViewData["IsAdminLayout"];
+    Layout = isAdminLayout ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model BlogAPP.Models.ViewModel.BlogCategoryViewModel
+<div class="container">
+<h1>Blog @(Model.Blog.BlogID!=0?"Update":"Create") Screen</h1>
+<form method="post" enctype="multipart/form-data">
+    <label asp-for="Blog.UserID"></label>
+    <input asp-for="Blog.UserID" class="form-control" />
+    <span asp-validation-for="Blog.UserID" class="text-danger"></span>
+
+    <label asp-for="Blog.BlogTitle"></label>
+    <input asp-for="Blog.BlogTitle" class="form-control" />
+    <span asp-validation-for="Blog.BlogTitle" class="text-danger"></span>
+
+    <label asp-for="Blog.BlogContent">Content:</label>
+    <textarea asp-for="Blog.BlogContent" class="form-control"></textarea>
+ 
+
+    <label asp-for="Blog.BlogImage">Image:</label>
+    <input type="file" asp-for="Blog.BlogImage" name="file" class="form-control" />
+  
+
+    <label asp-for="Blog.CategoryID">Category Name</label>
+    <select asp-for="@Model.Blog.CategoryID" asp-items="@Model.CategoryList" class="form-select">
+        <option disabled selected>--Select Category--</option>
+    </select>
+    <span asp-validation-for="Blog.CategoryID" class="text-danger"></span>
+
+
+    <input type="hidden" asp-for="Blog.BlogStatus" />
+    <input type="hidden" asp-for="Blog.Created_at" />
+   
+    @if(Model.Blog.BlogID != 0)
+    {  
+        <button class="mb-4 mt-3" type="submit">Update</button>
+    }
+    else
+    {
+        <button class="mb-4 mt-3" type="submit">Share</button>
+
+    }
+
+</form>
+
+</div>
+
+@section Scripts{
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons lists  table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate  mentions  tableofcontents footnotes mergetags autocorrect  inlinecss markdown',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough  |spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent',
+            
+        });
+    </script>
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+} 

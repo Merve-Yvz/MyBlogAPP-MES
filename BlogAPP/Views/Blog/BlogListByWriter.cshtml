@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "BlogListByWriter";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model List<BlogAPP.Models.Blog>
+
+<h1>My Blogs</h1>
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Blog ID</th>
+            <th>Blog Title</th>
+            <th>Blog Content</th>
+            <th>Blog Image</th>
+            <th>Category Name</th>
+            <th>Blog Status</th>
+            <th>Created_at</th>
+           
+            <th> </th>
+            <th> </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var blog in Model)
+        {
+            <tr>
+                <td>@blog.BlogID</td>
+                <td>@blog.BlogTitle</td>
+                <td>
+                    @{
+                        var truncatedContent = blog.BlogContent.Length > 50
+                        ? blog.BlogContent.Substring(0, 50) + "..."
+                        : blog.BlogContent;
+                    }
+                    @Html.Raw(@truncatedContent)
+                </td>
+                <td>@blog.BlogImage</td>
+                <td>@blog.Category.CategoryName</td>
+                <td>@blog.BlogStatus</td>
+                <td>@blog.Created_at</td>
+                <td>
+                    <a asp-controller="Blog" asp-action="UpSert" asp-route-id="@blog.BlogID"  asp-route-isAdmin="true" class="btn btn-danger">Edit</a>
+                </td>
+                <td>
+                 
+                    <a asp-controller="Blog" asp-action="DeleteBlog" asp-route-blogID="@blog.BlogID" class="btn btn-warning">Delete</a>
+             
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+</div>
+

@@ -1,0 +1,52 @@
+﻿@{
+    var isAdminLayout = (bool)ViewData["IsAdminLayout"];
+    Layout = isAdminLayout ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<BlogAPP.Models.User>
+
+<h1>Users</h1>
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Surname</th>
+            <th>User Email</th>
+            <th>User Password</th>
+            <th>Role Name</th>
+            <th>Created_at</th>
+           
+            <th> </th>
+            <th> </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserID</td>
+                <td>@user.UserName</td>
+                <td>@user.UserSurname</td>
+                <td>@user.UserEmail</td>
+                <td>@user.UserPassword</td>
+                <td>@user.Role.RoleName</td>
+                <td>@user.Created_at</td>
+                <td>
+                    <a class="btn btn-warning" asp-controller="User" asp-action="UserEdit" asp-route-id="@user.UserID">Edit</a>
+                </td>
+                <td>
+                   <a class="btn btn-danger" asp-controller="User" asp-action="UserEdit" asp-route-id="@user.UserID">Delete</a>
+             
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+</div>

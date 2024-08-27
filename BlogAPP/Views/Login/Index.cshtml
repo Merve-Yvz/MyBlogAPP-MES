@@ -1,0 +1,15 @@
+﻿@model BlogAPP.Models.User
+<div class="container">
+<h1>User Sign In Screen</h1>
+<form method="post">
+    <label asp-for="UserEmail"></label>
+    <input asp-for="UserEmail" type="email" class="form-control" />
+   
+    <label asp-for="UserPassword">Password:</label>
+    <input asp-for="UserPassword" class="form-control" type="password" />
+
+        <button class="mt-3 type="submit">Log In</button>
+    <p class="mt-3"><a asp-controller="Register" asp-action="Register">Don't you have an account yet?</a></p>
+
+    </form>
+</div>

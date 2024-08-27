@@ -1,0 +1,83 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/adminPanel/src/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/adminPanel/src/assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="~/adminPanel/src/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/adminPanel/src/assets/vendors/font-awesome/css/font-awesome.min.css">
+ 
+    <link rel="stylesheet" href="~/adminPanel/src/assets/css/style.css">
+    <link rel="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tiny.cloud/1/bsrbr6gvkuc6kvcsxaeeqlhisbvixh6j058pxjjhubkb5dpf/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="shortcut icon" href="~/adminPanel/src/assets/images/favicon.png" />
+</head>
+<body>
+    <div class="container-scroller">
+     
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo" href="~/Home/index.html"><img src="~/logo.png" class="rounded-circle" style="width: 105px; height: 105px; object-fit: cover;" /></a></a>
+    
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+              
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile ">
+                       
+                            <div class="nav-profile-text">
+                                <p class="mb-1 text-black">User ad soyad</p>
+                            </div>
+                 
+                      
+                    </li>
+                    <li class="nav-item d-none d-lg-block full-screen-link">
+                        <a class="nav-link">
+                            <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                        </a>
+                    </li>
+                   
+                    <li class="nav-item nav-logout d-none d-lg-block">
+                        <a class="nav-link" href="#">
+                            <i class="mdi mdi-power"></i>
+                        </a>
+                    </li>
+                  
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="container-fluid page-body-wrapper">
+            
+           @await Html.PartialAsync("~/Views/User/UserNavbarPartial.cshtml")
+            <div class="main-panel">
+                <div class="content-wrapper"> @RenderBody()</div>
+            </div>
+           
+        </div>
+    </div>
+
+    <script src="~/adminPanel/src/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/adminPanel/src/assets/js/off-canvas.js"></script>
+    <script src="~/adminPanel/src/assets/js/misc.js"></script>
+    <script src="~/adminPanel/src/assets/js/settings.js"></script>
+    <script src="~/adminPanel/src/assets/js/todolist.js"></script>
+    <script src="~/adminPanel/src/assets/js/jquery.cookie.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

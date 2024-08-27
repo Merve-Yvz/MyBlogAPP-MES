@@ -1,0 +1,67 @@
+﻿@model List<BlogAPP.Models.Blog>
+
+<div class="nav-scroller py-1 mb-5">
+    <nav class="nav d-flex justify-content-around">
+        <a class="text-decoration-none fs-3" asp-route-categoryId="0">All Blogs</a>
+        @foreach (var category in ViewBag.CategoryList)
+        {
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a class="text-decoration-none" asp-route-categoryId="@category.CategoryID">@category.CategoryName</a>
+                </li>
+            </ul>
+        }
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var blog in Model)
+                    {
+                        @if (blog.BlogStatus)
+                        {
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="position-relative">
+                                        <img src="@blog.BlogImage" class="card-img-top" style="height: 300px; object-fit: cover;" />
+                                        <span class="position-absolute top-0 start-0 bg-info text-white px-2 py-1">@blog.Category.CategoryName</span>
+                                    </div>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="card-title text-end mt-2">@blog.Created_at.ToShortDateString() <i class="bi bi-calendar-heart"></i></p>
+                                        <p class="card-title h5 text-dark opacity-75 text-uppercase text-center flex-grow-1">
+                                            @blog.BlogTitle
+                                        </p>
+                                        <p class="text-warning text-center mb-2">
+                                            by <b>@blog.User.UserName</b>
+                                        </p>
+                                        <p class="text-dark text-center flex-grow-1">
+                                            @{
+                                                var truncatedContent = blog.BlogContent.Length > 150
+                                                ? blog.BlogContent.Substring(0, 150) + "..."
+                                                : blog.BlogContent;
+                                            }
+                                            @Html.Raw(@truncatedContent)
+                                        </p>
+                                    </div>
+                                    <div class="card-footer mt-auto text-center">
+                                        <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@blog.BlogID" class="btn btn-primary">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+                else
+                {
+                    <div class="text-center d-flex m-auto p-auto">
+                        <h4 class="text-danger mt-5">No blogs found in this category.</h4>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

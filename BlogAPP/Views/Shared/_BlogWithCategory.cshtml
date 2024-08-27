@@ -1,0 +1,13 @@
+﻿@model List<BlogAPP.Models.Blog>
+
+@foreach (var blog in Model)
+{
+    <div class="blog-item">
+        <h3>@blog.BlogTitle</h3>
+        <p>@blog.UserID</p>
+        <img src="@blog.BlogImage" />
+        <h3>@blog.Created_at.Date.ToShortDateString()</h3>
+        <p>@Html.Raw(@blog.BlogContent)</p>
+
+    </div>
+}

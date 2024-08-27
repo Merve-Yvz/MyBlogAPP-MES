@@ -1,0 +1,61 @@
+﻿@model BlogAPP.Models.Blog
+
+<!--//banner-->
+<section class="banner-bottom">
+	<!--/blog-->
+	<div class="container">
+		<div class="row">
+			<!--left-->
+			<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+				<div class="blog-grid-top">
+					<div class="b-grid-top">
+						<div class="blog_info_left_grid">
+
+							<img src="@Model.BlogImage" class="img-fluid" alt="">
+							
+						</div>
+						<div class="blog-info-middle">
+							<ul>
+								<li>
+									<a href="#">
+										<i class="far fa-calendar-alt"></i> 
+									</a>
+								</li>
+								<li class="mx-2">
+									<a href="#">
+										<i class="far fa-thumbs-up"></i> 201 Likes
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="far fa-comment"></i> 15 Comments
+									</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+					<h3>
+						@Model.BlogTitle
+					</h3>
+					<p>@Html.Raw(@Model.BlogContent)
+					</p>
+					
+				</div>
+				@await Component.InvokeAsync("CommentListByBlog", new { blogId = Model.BlogID })
+
+				@* @await Html.PartialAsync("~/Views/Comment/_PartialCommentListByBlog.cshtml") *@
+				@await Html.PartialAsync("~/Views/Comment/AddComment.cshtml", new BlogAPP.Models.Comment { BlogID = Model.BlogID })
+				@* @await Component.InvokeAsync("AddComment", new { blogId = Model.BlogID }) *@
+
+              
+
+			</div>
+
+			
+		</div>
+	</div>
+
+			
+</section>

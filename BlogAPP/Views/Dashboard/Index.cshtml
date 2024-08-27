@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+   
+                  
+                    <div class="row">
+                        <div class="col-md-4 stretch-card grid-margin">
+                            <div class="card bg-gradient-danger card-img-holder text-white">
+                                <div class="card-body">
+                                   
+                                    <h4 class="font-weight-normal mb-3">
+                        Total Blog Count <i class="mdi mdi-chart-bar mdi-24px float-end"></i>
+                                    </h4>
+                    <h2 class="mb-5">@ViewBag.BlogCount</h2>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 stretch-card grid-margin">
+                            <div class="card bg-gradient-info card-img-holder text-white">
+                                <div class="card-body">
+                                
+                                    <h4 class="font-weight-normal mb-3">
+                        Your Blog Count <i class="mdi mdi-file-chart mdi-24px float-end"></i>
+                                    </h4>
+                    <h2 class="mb-5">@ViewBag.AdminBlogCount</h2>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 stretch-card grid-margin">
+                            <div class="card bg-gradient-success card-img-holder text-white">
+                                <div class="card-body">
+                                   
+                                    <h4 class="font-weight-normal mb-3">
+                        Total User Count <i class="mdi mdi-book-account mdi-24px float-end"></i>
+                                    </h4>
+                                    <h2 class="mb-5">@ViewBag.UserCount</h2>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="clearfix">
+                                        <h4 class="card-title float-start">Visit And Sales Statistics</h4>
+                                        <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-end"></div>
+                                    </div>
+                                    <canvas id="visit-sale-chart" class="mt-4"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Traffic Sources</h4>
+                                    <div class="doughnutjs-wrapper d-flex justify-content-center">
+                                        <canvas id="traffic-chart"></canvas>
+                                    </div>
+                                    <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <div class="card">
+                                <div class="card-body">
+                                 <h4 class="card-title">Number of blogs by category</h4>
+                    @await Component.InvokeAsync("BlogCountByCategory")
+                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body p-0 d-flex">
+                                    <div id="inline-datepicker" class="datepicker datepicker-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                   
+
+    <script src="~/adminPanel/src/assets/vendors/js/vendor.bundle.base.js"></script>
+ 
+        <script src="~/adminPanel/src/assets/vendors/chart.js/chart.umd.js"></script>
+        <script src="~/adminPanel/src/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+ 
+        <script src="~/adminPanel/src/assets/js/off-canvas.js"></script>
+        <script src="~/adminPanel/src/assets/js/misc.js"></script>
+        <script src="~/adminPanel/src/assets/js/settings.js"></script>
+        <script src="~/adminPanel/src/assets/js/todolist.js"></script>
+        <script src="~/adminPanel/src/assets/js/jquery.cookie.js"></script>
+
+      
+</body>
+</html>
+

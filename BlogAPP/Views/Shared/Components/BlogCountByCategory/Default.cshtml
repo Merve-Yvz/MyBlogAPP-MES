@@ -1,0 +1,30 @@
+﻿@model List<BlogAPP.Models.ViewModel.BlogCountbyCategory>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Blog Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CategoryName</td>
+                        <td>@item.BlogCount</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2">No data available</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
