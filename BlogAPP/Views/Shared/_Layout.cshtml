@@ -21,18 +21,21 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between fs-5">
                     <div>
                         <ul class="navbar-nav flex-grow-1">
+                         
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="UpSert">Share Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="UserBlogs">My Blogs</a>
-                            </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="UpSert">Share Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="UserBlogs">My Blogs</a>
+                            </li>}
                         </ul>
                     </div>
                     <div>
@@ -43,6 +46,14 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register"><i class="bi bi-person-video2"></i> Register</a>
                             </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <form class="form-inline" asp-controller="Account" asp-action="Logout"></form>
+                                    <button type="submit" class="nav-link text-dark"><i class="bi bi-person-video2"></i> Logout</button>
+                                </li>
+                            }
+
                         </ul>
                     </div>
                     

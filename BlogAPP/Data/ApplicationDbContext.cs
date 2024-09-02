@@ -1,4 +1,5 @@
 ﻿using BlogAPP.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data;
@@ -6,7 +7,7 @@ using System.Reflection.Metadata;
 
 namespace BlogAPP.Data
 {
-    public class ApplicationDbContext: DbContext
+    public class ApplicationDbContext:DbContext  
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {

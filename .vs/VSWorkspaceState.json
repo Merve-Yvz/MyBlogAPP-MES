@@ -3,9 +3,13 @@
     "",
     "\\BlogAPP",
     "\\BlogAPP\\Controllers",
+    "\\BlogAPP\\Models",
+    "\\BlogAPP\\Models\\ViewModel",
+    "\\BlogAPP\\Services",
     "\\BlogAPP\\Views",
-    "\\BlogAPP\\Views\\Home"
+    "\\BlogAPP\\Views\\Home",
+    "\\BlogAPP\\Views\\Login"
   ],
-  "SelectedNode": "\\BlogAPP.sln",
+  "SelectedNode": "\\BlogAPP\\Models\\ViewModel\\BlogCountbyCategory.cs",
   "PreviewInSolutionExplorer": false
 }

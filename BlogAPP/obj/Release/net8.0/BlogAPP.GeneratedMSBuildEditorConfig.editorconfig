@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\merve\Desktop\Staj2-Mert Yazılım\BlogAPP\BlogAPP
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Blog/BlogListByWriter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xCbG9nTGlzdEJ5V3JpdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,10 +54,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxBZGRDb21tZW50QXN5bmMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Dashboard/CategoryBlogCounts.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENhdGVnb3J5QmxvZ0NvdW50cy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -74,8 +74,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Login/LoggedIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9nZ2VkSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Register/Register.cshtml]
@@ -90,12 +94,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRkQ29tbWVudFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Shared/Components/CommentListByBlog/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29tbWVudExpc3RCeUJsb2dcRGVmYXVsdC5jc2h0bWw=
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Shared/Components/BlogCountByCategory/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvZ0NvdW50QnlDYXRlZ29yeVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Shared/Dashboard/BlogCountByCategory.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERhc2hib2FyZFxCbG9nQ291bnRCeUNhdGVnb3J5LmNzaHRtbA==
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Shared/Components/CommentListByBlog/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29tbWVudExpc3RCeUJsb2dcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Shared/Error.cshtml]

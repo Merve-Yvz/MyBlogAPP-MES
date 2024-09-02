@@ -24,10 +24,13 @@ namespace BlogAPP.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var userEmail = User.Identity.Name;
-            var user = _db.Users
-                      .FirstOrDefault(u => u.UserEmail == userEmail);
-            ViewBag.UserFullName = user.UserName+" "+user.UserSurname;    
+            //var userEmail = User.Identity.Name;
+            //var user = _db.Users
+            //          .FirstOrDefault(u => u.UserEmail == userEmail);
+            var userName = HttpContext.Session.GetString("UserName");
+            var userSurname = HttpContext.Session.GetString("UserSurname");
+
+            ViewBag.UserFullName = userName +" "+ userSurname;
             var blogs = await _db.Blogs
                                  .Include(b => b.Category) 
                                  .Include(b => b.User) 
