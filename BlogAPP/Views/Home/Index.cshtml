@@ -1,4 +1,5 @@
-﻿@model List<BlogAPP.Models.Blog>
+﻿
+@model List<BlogAPP.Models.Blog>
 
 <div class="bg-black">
     <h1 class="text-center bg-dark text-light p-1 text-uppercase">WELCOME @ViewBag.UserFullName!</h1>
@@ -53,6 +54,19 @@
                                 }
                                 <p class="text-dark text-center">@Html.Raw(shortcontent)</p>
                             </div>
+                            <button type="button" class="btn btn-link" onclick="toggleLike(@blog.BlogID, this)" onfocus="changeStyleOnFocus(this)">
+                                @if (ViewBag.LikedBlogIds.Contains(@blog.BlogID))
+                                {
+                                    <i class="bi bi-hand-thumbs-up-fill"></i>
+
+                                }
+                                else
+                                {
+                                    <i class="bi bi-hand-thumbs-up"></i>
+
+                                }
+                            </button>
+
                             <div class="card-footer mt-auto">
                                 <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@blog.BlogID" class="btn btn-primary bg-gradient border-0 form-control">Details</a>
                             </div>
@@ -63,3 +77,31 @@
         }
     </div>
 </div>
+
+<script>
+    function changeStyleOnFocus(button) {
+        
+        button.style.boxShadow = "none";
+
+
+    }
+
+function toggleLike(blogId, button) {
+    $.ajax({
+        url: '@Url.Action("ToggleLike", "Like")',
+        method: 'POST',
+        data: { blogId: blogId },
+        success: function (response) {
+            var icon = $(button).find("i");
+            if (response.isLiked) {
+                icon.removeClass("bi-hand-thumbs-up").addClass("bi-hand-thumbs-up-fill");
+            } else {
+                icon.removeClass("bi-hand-thumbs-up-fill").addClass("bi-hand-thumbs-up");
+            }
+        },
+        error: function () {
+            alert("Try Again Please.");
+        }
+    });
+}
+</script>

@@ -4,6 +4,7 @@ using BlogAPP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogAPP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240902141358_Like Model modified")]
+    partial class LikeModelmodified
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,6 +148,9 @@ namespace BlogAPP.Migrations
                     b.Property<int>("BlogID")
                         .HasColumnType("int");
 
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("int");
+
                     b.Property<int>("CommentID")
                         .HasColumnType("int");
 
@@ -158,7 +164,7 @@ namespace BlogAPP.Migrations
 
                     b.HasIndex("BlogID");
 
-                    b.HasIndex("CommentID");
+                    b.HasIndex("CategoryID");
 
                     b.HasIndex("UserID");
 
@@ -237,7 +243,7 @@ namespace BlogAPP.Migrations
                         new
                         {
                             UserID = 1,
-                            Created_at = new DateTime(2024, 9, 2, 17, 44, 54, 259, DateTimeKind.Local).AddTicks(2148),
+                            Created_at = new DateTime(2024, 9, 2, 17, 13, 57, 52, DateTimeKind.Local).AddTicks(2786),
                             RoleID = 1,
                             UserEmail = "merve@gmail.com",
                             UserName = "Merve",
@@ -287,7 +293,7 @@ namespace BlogAPP.Migrations
 
                     b.HasOne("BlogAPP.Models.Comment", "Comment")
                         .WithMany()
-                        .HasForeignKey("CommentID")
+                        .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

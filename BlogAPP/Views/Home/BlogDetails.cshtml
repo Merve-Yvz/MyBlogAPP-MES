@@ -39,15 +39,15 @@
 					<h3>
 						@Model.BlogTitle
 					</h3>
-					<p>@Html.Raw(@Model.BlogContent)
+					<p>
+						@Html.Raw(@Model.BlogContent)
 					</p>
 					
 				</div>
-				@await Component.InvokeAsync("CommentListByBlog", new { blogId = Model.BlogID })
+				@await Component.InvokeAsync("CommentListByBlog", new { BlogId = Model.BlogID })
 
-				@* @await Html.PartialAsync("~/Views/Comment/_PartialCommentListByBlog.cshtml") *@
-				@await Html.PartialAsync("~/Views/Comment/AddComment.cshtml", new BlogAPP.Models.Comment { BlogID = Model.BlogID })
-				@* @await Component.InvokeAsync("AddComment", new { blogId = Model.BlogID }) *@
+				@await Html.PartialAsync("~/Views/Comment/AddComment.cshtml", new { BlogId = Model.BlogID })
+				
 
               
 

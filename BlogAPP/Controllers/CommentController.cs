@@ -1,5 +1,6 @@
 ﻿using BlogAPP.Data;
 using BlogAPP.Models;
+using BlogAPP.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,19 +18,19 @@ namespace BlogAPP.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<PartialViewResult> AddComment(int blogId, string content, string username)
-        {
-            var comment = new Comment
-            {
-                BlogID = blogId,
-                CommentContent = content,
-                CommentUserName = username
-            };
+		[HttpPost]
+		public async Task<IActionResult> AddComment(Comment model)
+		{
+			if (ModelState.IsValid)
+			{
+				_db.Comments.Add(model);
+				await _db.SaveChangesAsync();
 
-            _db.Comments.Add(comment);
-            await _db.SaveChangesAsync();
-            return PartialView();
-        }
-    }
+				return RedirectToAction("BlogDetails", "Home", new { id = model.BlogID });
+			}
+			// Hata durumunda, blog detay sayfasını aynı model ile yeniden yükleyebilirsiniz.
+			return View("BlogDetails", model);
+		}
+
+	}
 }

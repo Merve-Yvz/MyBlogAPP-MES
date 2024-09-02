@@ -65,8 +65,10 @@ namespace BlogAPP.Controllers
 
                 HttpContext.Session.SetString("UserName", appUserInfo.UserName);
                 HttpContext.Session.SetString("UserSurname", appUserInfo.UserSurname);
+                HttpContext.Session.SetString("UserID", appUserInfo.UserID.ToString());
 
-               
+
+
 
                 return RedirectToAction("Index","Home");
             }
@@ -75,19 +77,19 @@ namespace BlogAPP.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult LoggedIn()
-        {
-            var userName = HttpContext.Session.GetString("UserName");
-            if (!string.IsNullOrEmpty(userName))
-            {
-                ViewBag.UserName = userName;
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-        }
+
+        //public IActionResult LoggedIn()
+        //{
+        //    var userName = HttpContext.Session.GetString("UserName");
+        //    if (!string.IsNullOrEmpty(userName))
+        //    {
+        //        ViewBag.UserName = userName;
+        //        return View();
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Login");
+        //    }
+        //}
     }
 }

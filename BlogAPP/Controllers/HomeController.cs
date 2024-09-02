@@ -29,6 +29,7 @@ namespace BlogAPP.Controllers
             //          .FirstOrDefault(u => u.UserEmail == userEmail);
             var userName = HttpContext.Session.GetString("UserName");
             var userSurname = HttpContext.Session.GetString("UserSurname");
+            var userID = int.Parse(HttpContext.Session.GetString("UserID"));
 
             ViewBag.UserFullName = userName +" "+ userSurname;
             var blogs = await _db.Blogs
@@ -37,6 +38,14 @@ namespace BlogAPP.Controllers
                                  .OrderByDescending(b => b.Created_at) // sort by creation date
                                  .Take(3) // latest 3 blogs
                                  .ToListAsync();
+
+            var likedBlogIds = await _db.Likes
+                                .Where(l => l.UserID == userID)
+                                .Select(l => l.BlogID)
+                                .ToListAsync();
+
+            ViewBag.LikedBlogIds = likedBlogIds;
+
 
             return View(blogs);
         }

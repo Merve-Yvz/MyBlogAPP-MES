@@ -130,7 +130,6 @@ namespace BlogAPP.Migrations
                     LikeID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CommentID = table.Column<int>(type: "int", nullable: false),
-                    CategoryID = table.Column<int>(type: "int", nullable: false),
                     BlogID = table.Column<int>(type: "int", nullable: false),
                     UserID = table.Column<int>(type: "int", nullable: false),
                     Created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -144,12 +143,7 @@ namespace BlogAPP.Migrations
                         principalTable: "Blogs",
                         principalColumn: "BlogID",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Likes_Comments_CategoryID",
-                        column: x => x.CategoryID,
-                        principalTable: "Comments",
-                        principalColumn: "CommentID",
-                        onDelete: ReferentialAction.NoAction);
+                   
                     table.ForeignKey(
                         name: "FK_Likes_Users_UserID",
                         column: x => x.UserID,
@@ -209,10 +203,7 @@ namespace BlogAPP.Migrations
                 table: "Likes",
                 column: "BlogID");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Likes_CategoryID",
-                table: "Likes",
-                column: "CategoryID");
+          
 
             migrationBuilder.CreateIndex(
                 name: "IX_Likes_UserID",
