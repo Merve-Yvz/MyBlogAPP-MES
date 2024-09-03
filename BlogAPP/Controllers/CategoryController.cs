@@ -1,6 +1,7 @@
 ﻿using BlogAPP.Data;
 using BlogAPP.Models;
 using BlogAPP.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,8 @@ using System;
 
 namespace BlogAPP.Controllers
 {
+    [Authorize(Policy = "AdminOnly")]
+
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _db;

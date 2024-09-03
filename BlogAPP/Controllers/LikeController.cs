@@ -16,7 +16,7 @@ namespace BlogAPP.Controllers
         [HttpPost]
         public async Task<JsonResult> ToggleLike(int blogId)
         {
-            // Kullanıcının kimliğini almak için (örneğin, Identity kullanıyorsanız)
+          
             var userID = int.Parse(HttpContext.Session.GetString("UserID"));
            
 
@@ -25,13 +25,13 @@ namespace BlogAPP.Controllers
             bool isLiked;
             if (like != null)
             {
-                // Beğeni varsa kaldır
+                
                 _db.Likes.Remove(like);
                 isLiked = false;
             }
             else
             {
-                // Beğeni yoksa ekle
+              
                 _db.Likes.Add(new Like { BlogID = blogId, UserID = userID });
                 isLiked = true;
             }

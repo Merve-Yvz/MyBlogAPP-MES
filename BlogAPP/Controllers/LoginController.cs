@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 using System.Linq;
 using System.Threading.Tasks;
 using BlogAPP.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace BlogAPP.Controllers
 {
@@ -40,13 +43,13 @@ namespace BlogAPP.Controllers
             }
 
             var appUserInfo = _dbContext.Users
-                .Where(u => u.UserEmail == email && u.UserPassword == password)
-                .FirstOrDefault();
+                .Include(u => u.Role)
+                .FirstOrDefault(u => u.UserEmail == email && u.UserPassword == password);
 
             if (appUserInfo != null)
             {
-                var role = appUserInfo.Role; // Kullanıcı rolü
-                var jwtToken = _authentication.GenerateJWTAuthentication(email, password);
+                var role = appUserInfo.Role.RoleName; 
+                var jwtToken = _authentication.GenerateJWTAuthentication(email, role);
                 var validUserName = _authentication.ValidateToken(jwtToken);
 
                 if (string.IsNullOrEmpty(validUserName))
@@ -58,7 +61,7 @@ namespace BlogAPP.Controllers
                 var cookieOptions = new CookieOptions
                 {
                     HttpOnly = true,
-                    Secure = true, // HTTPS üzerinden çalışıyorsanız bu seçeneği aktif edin
+                    Secure = true, 
                     Expires = DateTimeOffset.Now.AddDays(30)
                 };
                 Response.Cookies.Append("jwt", jwtToken, cookieOptions);
@@ -66,6 +69,7 @@ namespace BlogAPP.Controllers
                 HttpContext.Session.SetString("UserName", appUserInfo.UserName);
                 HttpContext.Session.SetString("UserSurname", appUserInfo.UserSurname);
                 HttpContext.Session.SetString("UserID", appUserInfo.UserID.ToString());
+                HttpContext.Session.SetString("UserRole", appUserInfo.Role.RoleName);
 
 
 
@@ -76,7 +80,14 @@ namespace BlogAPP.Controllers
             ModelState.AddModelError("", "Invalid login attempt");
             return View();
         }
+        public async Task<IActionResult> LogOut()
+        {
 
+            Response.Cookies.Delete("jwt");
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Login", "Login");
+        }
 
         //public IActionResult LoggedIn()
         //{

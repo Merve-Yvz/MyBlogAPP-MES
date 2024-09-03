@@ -11,7 +11,7 @@ namespace BlogAPP.Services
         {
             _authentication = authentication;
         }
-
+        
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             var request = context.HttpContext.Request;
@@ -22,12 +22,12 @@ namespace BlogAPP.Services
                 var userName = _authentication.ValidateToken(token);
                 if (string.IsNullOrEmpty(userName))
                 {
-                    context.Result = new UnauthorizedResult(); // Token doğrulaması başarısız, 401 Unauthorized döndür.
+                    context.Result = new UnauthorizedResult(); 
                 }
             }
             else
             {
-                context.Result = new UnauthorizedResult(); // Token bulunamadı, 401 Unauthorized döndür.
+                context.Result = new UnauthorizedResult();
             }
 
             base.OnActionExecuting(context);

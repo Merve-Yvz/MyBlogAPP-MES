@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlogAPP.Services
 {
@@ -20,14 +21,17 @@ namespace BlogAPP.Services
 
         public string GenerateJWTAuthentication(string userName, string role)
         {
+           
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, userName)
+                new Claim(ClaimTypes.NameIdentifier, userName),
+                new Claim(ClaimTypes.Role, role)
             };
 
-            claims.Add(new Claim(ClaimTypes.Role, role));
+            //claims.Add(new Claim(ClaimTypes.Role, role));
+       
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -62,7 +66,9 @@ namespace BlogAPP.Services
                     ValidateAudience = true,
                     ValidIssuer = _configuration["Jwt:Issuer"],
                     ValidAudience = _configuration["Jwt:Audience"],
-                    ClockSkew = TimeSpan.Zero
+                    ClockSkew = TimeSpan.Zero,
+                 
+
 
                 }, out SecurityToken validatedToken);
 
