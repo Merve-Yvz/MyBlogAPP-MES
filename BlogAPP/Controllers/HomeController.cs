@@ -9,7 +9,6 @@ using System.Security.Claims;
 
 namespace BlogAPP.Controllers
 {
-    [AllowAnonymous]
 
     public class HomeController : Controller
     {
@@ -21,6 +20,7 @@ namespace BlogAPP.Controllers
             _db = db;
             _logger = logger;
         }
+        [Authorize(Roles = "User")]
 
         public async Task<IActionResult> Index()
         {

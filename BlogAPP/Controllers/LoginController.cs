@@ -3,24 +3,30 @@ using BlogAPP.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using BlogAPP.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.IdentityModel.Tokens;
+using NuGet.Common;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Azure;
 
 namespace BlogAPP.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly Authentication _authentication;
+        private readonly IConfiguration _configuration;
         private readonly ApplicationDbContext _dbContext;
+        private readonly Authentication _authentication;
 
-        public LoginController(Authentication authentication, ApplicationDbContext dbContext)
+        public LoginController(IConfiguration configuration, ApplicationDbContext dbContext, Authentication authentication)
         {
-            _authentication = authentication;
+            _configuration = configuration;
             _dbContext = dbContext;
+            _authentication = authentication;
         }
 
         [HttpGet]
@@ -31,7 +37,7 @@ namespace BlogAPP.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Login(User user)
+        public IActionResult Login(User user)
         {
             var email = user.UserEmail;
             var password = user.UserPassword;
@@ -48,59 +54,44 @@ namespace BlogAPP.Controllers
 
             if (appUserInfo != null)
             {
-                var role = appUserInfo.Role.RoleName; 
-                var jwtToken = _authentication.GenerateJWTAuthentication(email, role);
-                var validUserName = _authentication.ValidateToken(jwtToken);
-
-                if (string.IsNullOrEmpty(validUserName))
-                {
-                    ModelState.AddModelError("", "Unauthorized login attempt");
-                    return View();
-                }
-
+                var role = appUserInfo.Role.RoleName;
+                var tokenString = _authentication.GenerateJwtToken(email,role);
                 var cookieOptions = new CookieOptions
                 {
-                    HttpOnly = true,
+                    HttpOnly = true, 
                     Secure = true, 
-                    Expires = DateTimeOffset.Now.AddDays(30)
+                    Expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["Jwt:Expires"])),
+                    SameSite = SameSiteMode.Strict 
                 };
-                Response.Cookies.Append("jwt", jwtToken, cookieOptions);
 
+                Response.Cookies.Append("AuthToken", tokenString, cookieOptions);
                 HttpContext.Session.SetString("UserName", appUserInfo.UserName);
                 HttpContext.Session.SetString("UserSurname", appUserInfo.UserSurname);
                 HttpContext.Session.SetString("UserID", appUserInfo.UserID.ToString());
                 HttpContext.Session.SetString("UserRole", appUserInfo.Role.RoleName);
 
-
-
-
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home"); 
+            }
+            else
+            {
+                return Unauthorized();
             }
 
-            ModelState.AddModelError("", "Invalid login attempt");
-            return View();
-        }
-        public async Task<IActionResult> LogOut()
+           
+            }
+        public IActionResult LogOut()
         {
-
-            Response.Cookies.Delete("jwt");
+            Response.Cookies.Delete("AuthToken");
             HttpContext.Session.Clear();
 
             return RedirectToAction("Login", "Login");
         }
-
-        //public IActionResult LoggedIn()
-        //{
-        //    var userName = HttpContext.Session.GetString("UserName");
-        //    if (!string.IsNullOrEmpty(userName))
-        //    {
-        //        ViewBag.UserName = userName;
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Login");
-        //    }
-        //}
+      
+        
     }
+
+   
+
+
 }
+

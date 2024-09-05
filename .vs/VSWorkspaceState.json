@@ -8,7 +8,8 @@
     "\\BlogAPP\\Services",
     "\\BlogAPP\\Views",
     "\\BlogAPP\\Views\\Home",
-    "\\BlogAPP\\Views\\Login"
+    "\\BlogAPP\\Views\\Login",
+    "\\BlogAPP\\Views\\Shared"
   ],
   "SelectedNode": "\\BlogAPP.sln",
   "PreviewInSolutionExplorer": false

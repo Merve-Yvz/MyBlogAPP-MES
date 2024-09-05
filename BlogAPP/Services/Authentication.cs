@@ -19,68 +19,25 @@ namespace BlogAPP.Services
             _configuration = configuration;
         }
 
-        public string GenerateJWTAuthentication(string userName, string role)
+        public string GenerateJwtToken(string email, string role)
         {
-           
-            var claims = new List<Claim>
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, userName),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, userName),
-                new Claim(ClaimTypes.Role, role)
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]{
+                 new Claim(ClaimTypes.NameIdentifier,email),
+                 new Claim(ClaimTypes.Role,role)
             };
-
-            //claims.Add(new Claim(ClaimTypes.Role, role));
-       
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["Jwt:Expires"]));
-
             var token = new JwtSecurityToken(
                 _configuration["Jwt:Issuer"],
                 _configuration["Jwt:Audience"],
                 claims,
-                expires: expires,
-                signingCredentials: creds
+                expires: DateTime.Now.AddDays(Convert.ToDouble(_configuration["Jwt:Expires"])),
+                signingCredentials: credentials
             );
-
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public string ValidateToken(string token)
-        {
-            if (string.IsNullOrEmpty(token))
-                return null;
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
-
-            try
-            {
-                tokenHandler.ValidateToken(token, new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidIssuer = _configuration["Jwt:Issuer"],
-                    ValidAudience = _configuration["Jwt:Audience"],
-                    ClockSkew = TimeSpan.Zero,
-                 
-
-
-                }, out SecurityToken validatedToken);
-
-                var jwtToken = (JwtSecurityToken)validatedToken;
-                var userName = jwtToken.Claims.First(claim => claim.Type == JwtRegisteredClaimNames.Sub).Value;
-
-                return userName;
-            }
-            catch
-            {
-                return null;
-            }
-        }
     }
 }

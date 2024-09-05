@@ -1,6 +1,8 @@
 ﻿using BlogAPP.Data;
 using BlogAPP.Models;
 using BlogAPP.Models.ViewModel;
+using BlogAPP.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,8 +11,8 @@ using System;
 
 namespace BlogAPP.Controllers
 {
-    [Authorize(Policy = "AdminOnly")]
 
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -19,6 +21,7 @@ namespace BlogAPP.Controllers
             _db = db;
             
         }
+        //[JwtAuthentication]
         public IActionResult Index(int categoryID)
         {
             ViewBag.CategoryList = _db.Categories.ToList();
