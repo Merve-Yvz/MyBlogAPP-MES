@@ -10,7 +10,7 @@ namespace BlogAPP.Models
         public string CommentContent { get; set; }
 
         public int BlogID { get; set; }
-        public Blog Blog { get; set; }
+        public Blog? Blog { get; set; }
 
         List<Like> Likes { get; set; }
         public DateTime Created_at { get; set; } = DateTime.Now;

@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\models\\viewmodel\\blogdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\models\\viewmodel\\blogdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\views\\comment\\addcomment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\views\\comment\\addcomment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\views\\home\\blogdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\views\\home\\blogdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\models\\viewmodel\\blogcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\models\\viewmodel\\blogcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\models\\viewmodel\\blogcountbycategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\models\\viewmodel\\blogcountbycategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\views\\shared\\components\\addcomment\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\views\\shared\\components\\addcomment\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +54,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "BlogAPP\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "BlogAPP\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADcAAAAAAAAAAAAkwEkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-05T07:59:51.829Z",
+              "DocumentIndex": 3,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\Comment.cs",
+              "RelativeToolTip": "BlogAPP\\Models\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T11:45:34.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "AddComment.cshtml",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Comment\\AddComment.cshtml",
+              "RelativeDocumentMoniker": "BlogAPP\\Views\\Comment\\AddComment.cshtml",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Comment\\AddComment.cshtml",
+              "RelativeToolTip": "BlogAPP\\Views\\Comment\\AddComment.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-05T11:35:52.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "BlogAPP\\Controllers\\CommentController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T11:27:55.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BlogDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Home\\BlogDetails.cshtml",
+              "RelativeDocumentMoniker": "BlogAPP\\Views\\Home\\BlogDetails.cshtml",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Home\\BlogDetails.cshtml",
+              "RelativeToolTip": "BlogAPP\\Views\\Home\\BlogDetails.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwDAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-05T11:26:11.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "BlogAPP\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\HomeController.cs",
               "RelativeToolTip": "BlogAPP\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwB8AAABOAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAYwEEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T07:55:06.745Z",
+              "WhenOpened": "2024-09-05T11:24:30.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlogDetailViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\ViewModel\\BlogDetailViewModel.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Models\\ViewModel\\BlogDetailViewModel.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\ViewModel\\BlogDetailViewModel.cs*",
+              "RelativeToolTip": "BlogAPP\\Models\\ViewModel\\BlogDetailViewModel.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T11:23:43.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BlogCountbyCategory.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\ViewModel\\BlogCountbyCategory.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Models\\ViewModel\\BlogCountbyCategory.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\ViewModel\\BlogCountbyCategory.cs",
+              "RelativeToolTip": "BlogAPP\\Models\\ViewModel\\BlogCountbyCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T11:22:57.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BlogCategoryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\ViewModel\\BlogCategoryViewModel.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Models\\ViewModel\\BlogCategoryViewModel.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\ViewModel\\BlogCategoryViewModel.cs",
+              "RelativeToolTip": "BlogAPP\\Models\\ViewModel\\BlogCategoryViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T11:22:49.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Shared\\Components\\AddComment\\Default.cshtml",
+              "RelativeDocumentMoniker": "BlogAPP\\Views\\Shared\\Components\\AddComment\\Default.cshtml",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Shared\\Components\\AddComment\\Default.cshtml",
+              "RelativeToolTip": "BlogAPP\\Views\\Shared\\Components\\AddComment\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-05T11:05:01.935Z",
               "EditorCaption": ""
             }
           ]

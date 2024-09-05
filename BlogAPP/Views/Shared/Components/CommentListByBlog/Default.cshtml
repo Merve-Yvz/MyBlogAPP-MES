@@ -1,10 +1,12 @@
 ﻿@model List<BlogAPP.Models.Comment>
-@if(Model is not null){
+
 <div class="comment-top p-2 rounded-1 mt-3" style="background-color:#eee9e9;">
 	<h4>Comments</h4>
-	@foreach (var comment in Model)
+	@if (Model != null && Model.Any())
 	{
-		<div class="media mt-3 d-flex justify-content-start p-2">
+		@foreach (var comment in Model)
+		{
+			<div class="media mt-3 d-flex justify-content-start p-2">
 
 			<span class="fs-1"><i class="bi bi-chat-right-quote-fill"></i> </span>
 			<div class="media-body ms-3 border p-1">
@@ -17,10 +19,15 @@
 			</p>
 
 		</div>
-	</div>}
-	</div>
-}
-else
-{
-	<h4>There aren't' comments on this blog yet. Be the first to comment. <i class="bi bi-emoji-smile"></i> </h4>
-}
+			</div>}
+	}
+	else
+	{
+		<div class="media mt-3 d-flex justify-content-start p-2">
+		<span class="fs-1"><i class="bi bi-chat-right-quote-fill"></i> </span>
+		<div class="media-body ms-3 border p-1">
+		<h4 class="text-center">There aren't comments on this blog yet. Be the first to comment. <i class="bi bi-emoji-smile"></i> </h4></div>
+		</div>
+	}
+</div>
+

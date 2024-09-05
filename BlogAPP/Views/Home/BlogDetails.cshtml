@@ -1,4 +1,4 @@
-﻿@model BlogAPP.Models.Blog
+﻿@model BlogAPP.Models.ViewModel.BlogDetailViewModel
 
 <!--//banner-->
 <section class="banner-bottom">
@@ -11,7 +11,7 @@
 					<div class="b-grid-top">
 						<div class="blog_info_left_grid">
 
-							<img src="@Model.BlogImage" class="img-fluid" alt="">
+							<img src="@Model.Blog.BlogImage" class="img-fluid" alt="">
 							
 						</div>
 						<div class="blog-info-middle">
@@ -37,16 +37,16 @@
 					</div>
 
 					<h3>
-						@Model.BlogTitle
+						@Model.Blog.BlogTitle
 					</h3>
 					<p>
-						@Html.Raw(@Model.BlogContent)
+						@Html.Raw(@Model.Blog.BlogContent)
 					</p>
 					
 				</div>
-				@await Component.InvokeAsync("CommentListByBlog", new { BlogId = Model.BlogID })
+				@await Component.InvokeAsync("CommentListByBlog", new { BlogId = Model.Blog.BlogID })
 
-				@await Html.PartialAsync("~/Views/Comment/AddComment.cshtml", new { BlogId = Model.BlogID })
+			    @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml") 
 				
 
               

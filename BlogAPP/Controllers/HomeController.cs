@@ -1,5 +1,6 @@
 using BlogAPP.Data;
 using BlogAPP.Models;
+using BlogAPP.Models.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -57,9 +58,9 @@ namespace BlogAPP.Controllers
 
         public IActionResult BlogDetails(int id)
         {
-            Blog model = new Blog();
+            BlogDetailViewModel model = new BlogDetailViewModel();
 
-            model = _db.Blogs.FirstOrDefault(u => id == u.BlogID);
+            model.Blog = _db.Blogs.FirstOrDefault(u => id == u.BlogID);
             return View(model);
         }
       

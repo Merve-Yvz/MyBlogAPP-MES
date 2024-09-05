@@ -13,23 +13,22 @@ namespace BlogAPP.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public IActionResult AddComment()
         {
             return View();
         }
-
 		[HttpPost]
-		public async Task<IActionResult> AddComment(Comment model)
+		public async Task<IActionResult> AddComment(BlogDetailViewModel model)
 		{
 			if (ModelState.IsValid)
 			{
-				_db.Comments.Add(model);
+				await _db.Comments.AddAsync(model.Comment);
 				await _db.SaveChangesAsync();
 
-				return RedirectToAction("BlogDetails", "Home", new { id = model.BlogID });
+				return RedirectToAction("BlogDetails","Home", new { id = model.Comment.BlogID });
 			}
-			// Hata durumunda, blog detay sayfasını aynı model ile yeniden yükleyebilirsiniz.
-			return View("BlogDetails", model);
+
+			return View();
 		}
 
 	}

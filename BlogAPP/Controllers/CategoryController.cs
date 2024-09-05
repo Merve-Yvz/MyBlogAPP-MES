@@ -12,7 +12,7 @@ using System;
 namespace BlogAPP.Controllers
 {
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "User")]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _db;
