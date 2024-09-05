@@ -20,7 +20,7 @@ namespace BlogAPP.Controllers
             _db = db;
             _logger = logger;
         }
-        [Authorize(Roles = "User")]
+        
 
         public async Task<IActionResult> Index()
         {
@@ -29,7 +29,7 @@ namespace BlogAPP.Controllers
             //          .FirstOrDefault(u => u.UserEmail == userEmail);
             var userName = HttpContext.Session.GetString("UserName");
             var userSurname = HttpContext.Session.GetString("UserSurname");
-            var userID = int.Parse(HttpContext.Session.GetString("UserID"));
+            var userIDString = HttpContext.Session.GetString("UserID");
 
             ViewBag.UserFullName = userName +" "+ userSurname;
             var blogs = await _db.Blogs
@@ -38,13 +38,18 @@ namespace BlogAPP.Controllers
                                  .OrderByDescending(b => b.Created_at) // sort by creation date
                                  .Take(3) // latest 3 blogs
                                  .ToListAsync();
+            if (userIDString != null)
+            {
+                var userID = int.Parse(userIDString);
 
-            var likedBlogIds = await _db.Likes
+                var likedBlogIds = await _db.Likes
                                 .Where(l => l.UserID == userID)
                                 .Select(l => l.BlogID)
                                 .ToListAsync();
+                ViewBag.LikedBlogIds = likedBlogIds;
 
-            ViewBag.LikedBlogIds = likedBlogIds;
+            }
+
 
 
             return View(blogs);

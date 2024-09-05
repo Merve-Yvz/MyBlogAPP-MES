@@ -35,14 +35,14 @@
                                     @blog.BlogTitle
                                 </p>
                                 <p class="card-title text-warning text-center">
-                                    by <b>@blog.User.UserName @blog.User.UserSurname</b> 
+                                    by <b>@blog.User.UserName @blog.User.UserSurname</b>
                                 </p>
                                 <div>
-                                @{
+                                    @{
                                     var shortcontent = blog.BlogContent;
-                                }
+                                    }
 
-                                @if (!string.IsNullOrEmpty(shortcontent) && shortcontent.Length > 190)
+                                    @if (!string.IsNullOrEmpty(shortcontent) && shortcontent.Length > 190)
                                 {
                                 // İçeriği kısalt
                                     var truncatedContent = blog.BlogContent.Substring(0, 190);
@@ -57,20 +57,21 @@
                                     <p class="text-dark text-center mt-5">@Html.Raw(shortcontent)</p>
                                 </div>
                             </div>
-                           
-                                <button type="button" class="btn btn-link" onclick="toggleLike(@blog.BlogID, this)" onfocus="changeStyleOnFocus(this)">
-                                    @if (ViewBag.LikedBlogIds.Contains(@blog.BlogID))
+                            @if (User.IsInRole("User")){
+
+                            <button type="button" class="btn btn-link" onclick="toggleLike(@blog.BlogID, this)" onfocus="changeStyleOnFocus(this)">
+                                @if (ViewBag.LikedBlogIds.Contains(@blog.BlogID))
                                     {
-                                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                                <i class="bi bi-hand-thumbs-up-fill"></i>
 
                                     }
                                     else
                                     {
-                                        <i class="bi bi-hand-thumbs-up"></i>
+                                <i class="bi bi-hand-thumbs-up"></i>
 
                                     }
-                                </button>
-                            
+                            </button>
+                            }
                             <div class="card-footer mt-auto">
                                 <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@blog.BlogID" class="btn btn-primary bg-gradient border-0 form-control">Details</a>
                             </div>
