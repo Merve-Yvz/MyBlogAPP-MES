@@ -21,15 +21,19 @@ namespace BlogAPP.Controllers
         private readonly IConfiguration _configuration;
         private readonly ApplicationDbContext _dbContext;
         private readonly Authentication _authentication;
+		private readonly ILogger<User> _logger;
 
-        public LoginController(IConfiguration configuration, ApplicationDbContext dbContext, Authentication authentication)
+
+		public LoginController(IConfiguration configuration, ApplicationDbContext dbContext, Authentication authentication, ILogger<User> logger)
         {
             _configuration = configuration;
             _dbContext = dbContext;
             _authentication = authentication;
-        }
+			_logger = logger;
 
-        [HttpGet]
+		}
+
+		[HttpGet]
         public IActionResult Login()
         {
             return View();
@@ -44,7 +48,7 @@ namespace BlogAPP.Controllers
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                ModelState.AddModelError("", "Please enter valid email and password");
+				ModelState.AddModelError("", "Please enter valid email and password");
                 return View();
             }
 
@@ -56,7 +60,10 @@ namespace BlogAPP.Controllers
             {
                 var role = appUserInfo.Role.RoleName;
                 var tokenString = _authentication.GenerateJwtToken(email,role);
-                var cookieOptions = new CookieOptions
+
+				_logger.LogInformation("User {UserEmail} has logged in and received a token.", email);
+                _logger.LogInformation("User token is {tokenString}",tokenString);
+				var cookieOptions = new CookieOptions
                 {
                     HttpOnly = true, 
                     Secure = true, 
@@ -74,7 +81,8 @@ namespace BlogAPP.Controllers
             }
             else
             {
-                return Unauthorized();
+				_logger.LogWarning("Failed login attempt for {UserEmail}.", email);
+				return Unauthorized();
             }
 
            

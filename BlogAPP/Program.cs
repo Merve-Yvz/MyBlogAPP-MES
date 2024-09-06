@@ -9,11 +9,17 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using BlogAPP.Models;
 using BlogAPP.Services;
 using System.Security.Claims;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Host.UseSerilog((context, configuration) =>
+	configuration.ReadFrom.Configuration(context.Configuration));
+
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Session süresi
@@ -72,6 +78,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseStatusCodePagesWithReExecute("/ErrorPage/Error", "?code={0}");
 app.UseHttpsRedirection();
+app.UseSerilogRequestLogging();
+
 app.UseStaticFiles();
 
 app.UseSession();
