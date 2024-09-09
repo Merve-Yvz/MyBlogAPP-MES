@@ -1,3 +1,4 @@
+
 using BlogAPP.Data;
 using BlogAPP.Models;
 using BlogAPP.Models.ViewModel;
@@ -21,7 +22,7 @@ namespace BlogAPP.Controllers
             _db = db;
             _logger = logger;
         }
-        
+
 
         public async Task<IActionResult> Index()
         {
@@ -32,24 +33,14 @@ namespace BlogAPP.Controllers
             var userSurname = HttpContext.Session.GetString("UserSurname");
             var userIDString = HttpContext.Session.GetString("UserID");
 
-            ViewBag.UserFullName = userName +" "+ userSurname;
+            ViewBag.UserFullName = userName + " " + userSurname;
             var blogs = await _db.Blogs
-                                 .Include(b => b.Category) 
-                                 .Include(b => b.User) 
+                                 .Include(b => b.Category)
+                                 .Include(b => b.User)
                                  .OrderByDescending(b => b.Created_at) // sort by creation date
                                  .Take(3) // latest 3 blogs
                                  .ToListAsync();
-            if (userIDString != null)
-            {
-                var userID = int.Parse(userIDString);
-
-                var likedBlogIds = await _db.Likes
-                                .Where(l => l.UserID == userID)
-                                .Select(l => l.BlogID)
-                                .ToListAsync();
-                ViewBag.LikedBlogIds = likedBlogIds;
-
-            }
+           
 
 
 
@@ -58,12 +49,29 @@ namespace BlogAPP.Controllers
 
         public IActionResult BlogDetails(int id)
         {
-            BlogDetailViewModel model = new BlogDetailViewModel();
+			var userIDString = HttpContext.Session.GetString("UserID");
 
-            model.Blog = _db.Blogs.FirstOrDefault(u => id == u.BlogID);
-            return View(model);
+			BlogDetailViewModel model = new BlogDetailViewModel();
+
+            model.Blog = _db.Blogs
+                  .Include(b => b.Likes)       
+                  .Include(b => b.Comments)   
+                  .FirstOrDefault(u => u.BlogID == id);
+
+			if (userIDString != null)
+			{
+				var userID = int.Parse(userIDString);
+
+				var likedBlogIds = _db.Likes
+								.Where(l => l.UserID == userID)
+								.Select(l => l.BlogID)
+								.ToList();
+				ViewBag.LikedBlogIds = likedBlogIds;
+
+			}
+			return View(model);
         }
-      
+
 
         public IActionResult Privacy()
         {

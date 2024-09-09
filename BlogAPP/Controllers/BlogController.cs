@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Security.Claims;
 
 namespace BlogAPP.Controllers
 {
@@ -27,9 +28,9 @@ namespace BlogAPP.Controllers
         }
 
         [HttpGet]
-        public IActionResult UpSert(int? id, bool isAdmin = false) // Update Insert
+        public IActionResult UpSert(int? id) // Update Insert
         {
-            ViewData["IsAdminLayout"] = isAdmin;
+           
 
             BlogCategoryViewModel model = new()
             {
@@ -70,8 +71,8 @@ namespace BlogAPP.Controllers
                         file.CopyTo(stream);
                     }
 
-                    // send to model 
-                    blogVM.Blog.BlogImage = fileName;
+					// send to model 
+					blogVM.Blog.BlogImage = $"/images/{fileName}";
                 }
 
                 //  create or update blog
@@ -114,7 +115,10 @@ namespace BlogAPP.Controllers
         }
         public IActionResult BlogListByWriter()
         {
-            var userEmail = User.Identity.Name;
+            
+
+            var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+
             var userID =  _db.Users.Where(x => x.UserEmail == userEmail).Select(y => y.UserID).FirstOrDefault();
 
             var blogs =  _db.Blogs

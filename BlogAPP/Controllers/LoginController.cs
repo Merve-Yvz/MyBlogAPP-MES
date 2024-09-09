@@ -59,7 +59,8 @@ namespace BlogAPP.Controllers
             if (appUserInfo != null)
             {
                 var role = appUserInfo.Role.RoleName;
-                var tokenString = _authentication.GenerateJwtToken(email,role);
+                var name = appUserInfo.UserName +" "+ appUserInfo.UserSurname;
+                var tokenString = _authentication.GenerateJwtToken(email,role,name);
 
 				_logger.LogInformation("User {UserEmail} has logged in and received a token.", email);
                 _logger.LogInformation("User token is {tokenString}",tokenString);

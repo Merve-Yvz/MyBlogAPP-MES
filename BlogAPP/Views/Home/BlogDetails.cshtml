@@ -14,39 +14,64 @@
 							<img src="@Model.Blog.BlogImage" class="img-fluid" alt="">
 							
 						</div>
-						<div class="blog-info-middle">
-							<ul>
+						<div class="blog-info-middle mt-5">
+							<ul style="list-style-type:none;" class="d-flex flex-row-reverse gap-2">
 								<li>
-									<a href="#">
-										<i class="far fa-calendar-alt"></i> 
+									<a href="#" style="text-decoration:none">
+										<i class="bi bi-calendar-event"> @Model.Blog.Created_at</i>
 									</a>
 								</li>
 								<li class="mx-2">
-									<a href="#">
-										<i class="far fa-thumbs-up"></i> 201 Likes
+									<a href="#" style="text-decoration:none">
+										<i class="bi bi-bookmark-heart"></i><span id="likesCount">@Model.Blog.Likes.Count()</span>
 									</a>
 								</li>
 								<li>
-									<a href="#">
-										<i class="far fa-comment"></i> 15 Comments
+									<a href="#" style="text-decoration:none">
+										<i class="bi bi-chat-dots"></i> @Model.Blog.Comments.Count()
 									</a>
 								</li>
 
 							</ul>
 						</div>
 					</div>
+					<div>
+                        <h3>
+                            @Model.Blog.BlogTitle
 
-					<h3>
-						@Model.Blog.BlogTitle
-					</h3>
-					<p>
-						@Html.Raw(@Model.Blog.BlogContent)
-					</p>
+                        </h3>
+						<p class="mt-4">
+							@Html.Raw(@Model.Blog.BlogContent)
+						</p>
+						
+                    </div>
+					<div class=" d-flex justify-content-center">
+					
+					@if (User.IsInRole("User"))
+					{
+
+						<button type="button" class="btn btn-link fs-5" onclick="toggleLike(@Model.Blog.BlogID, this)" onfocus="changeStyleOnFocus(this)"> 
+							@if (ViewBag.LikedBlogIds.Contains(@Model.Blog.BlogID))
+							{
+									<i class="bi bi-suit-heart-fill"></i>
+
+							}
+							else
+							{
+									<i class="bi bi-suit-heart"></i>
+
+							}
+						</button>
+						}
+					</div>
 					
 				</div>
+				<div class="mt-5">
 				@await Component.InvokeAsync("CommentListByBlog", new { BlogId = Model.Blog.BlogID })
-
-			    @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml") 
+				</div>
+				<div class="mt-5 mb-5">
+                    @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")
+                </div>
 				
 
               
@@ -59,3 +84,44 @@
 
 			
 </section>
+
+
+<script>
+	function changeStyleOnFocus(button) {
+
+		button.style.boxShadow = "none";
+
+
+	}
+
+	function toggleLike(blogId, button) {
+		$.ajax({
+			url: '@Url.Action("ToggleLike", "Like")',
+			method: 'POST',
+			data: { blogId: blogId },
+			success: function (response) {
+				var icon = $(button).find("i");
+				
+				if (response.isLiked) {
+					icon.removeClass("bi-suit-heart").addClass("bi-suit-heart-fill");
+					
+				} else {
+					icon.removeClass("bi-suit-heart-fill").addClass("bi-suit-heart");
+					
+				}
+				$.ajax({
+					url: '@Url.Action("GetLikeCount", "Like")', 
+					method: 'GET',
+					data: { blogId: blogId },
+					success: function (data) {
+						
+						$('#likesCount').text(data.count);
+					}
+				});
+			},
+			error: function () {
+				alert("Try Again Please.");
+			}
+		});
+	}
+</script>

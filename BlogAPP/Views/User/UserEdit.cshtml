@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model BlogAPP.Models.User
+<h1>User Edition Screen</h1>
+@if (Model is null)
+{
+    <p>No User was found with this ID</p>
+}
+else
+{
+    <form method="post">
+        <div>
+        <label>ID:</label>
+            <input type="text" asp-for="UserID" readonly />
+        </div>
+        <div>
+        <label>Name:</label>
+            <input type="text" asp-for="UserName" />
+        </div>
+        <div>
+        <label>Surname:</label>
+            <input type="text" asp-for="UserSurname" />
+        </div>
+        <div>
+        <label>E-Mail:</label>
+            <input type="email" asp-for="UserEmail" />
+        </div>
+        <div>
+        <label>Password:</label>
+            <input type="password" asp-for="UserPassword"/>
+        </div>
+        <div>
+        <input type="checkbox" id="userStatus" asp-for="UserStatus" />
+            <label for="userStatus">Status</label>
+        </div>
+        <div>
+
+        <label>Role ID:</label>
+            <input type="number" asp-for="RoleID" />
+        
+        </div>
+        <div>
+        <label>Creation Date:</label>
+            <input type="text" asp-for="Created_at" readonly />
+        </div>
+        <button type="submit">Save</button>
+       
+
+
+
+    </form>
+}

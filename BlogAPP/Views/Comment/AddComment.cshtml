@@ -5,8 +5,8 @@
    
     <div class="form-group">
         <label for="CommentText">Share Your Comment</label>
-        <input class="form-control" asp-for="@Model.Comment.CommentUserName" placeholder="User Name.." required/>
-        <textarea class="form-control" asp-for="@Model.Comment.CommentContent" rows="3" required placeholder="What are your thoughts?"></textarea>
+        <input class="form-control mb-2" asp-for="@Model.Comment.CommentUserName" placeholder="User Name.." required/>
+        <textarea class="form-control mb-2" asp-for="@Model.Comment.CommentContent" rows="3" required placeholder="What are your thoughts?"></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Send</button>

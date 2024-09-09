@@ -74,10 +74,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Register/UserList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcVXNlckxpc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/Shared/Components/BlogCountByCategory/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvZ0NvdW50QnlDYXRlZ29yeVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,16 +102,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/User/AdminPanel.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZG1pblBhbmVsLmNzaHRtbA==
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/User/AdminNavbarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZG1pbk5hdmJhclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/User/UserNavbarPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyTmF2YmFyUGFydGlhbC5jc2h0bWw=
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/User/UserCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/User/UserEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/merve/Desktop/Staj2-Mert Yazılım/BlogAPP/BlogAPP/Views/_ViewImports.cshtml]

@@ -23,7 +23,7 @@
      
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <a class="navbar-brand brand-logo" href="~/Home/index.html"><img src="~/logo.png" class="rounded-circle" style="width: 105px; height: 105px; object-fit: cover;" /></a></a>
+                <a class="navbar-brand brand-logo" href="~/Home/index.html"><img src="~/logo.png" class="rounded-circle" style="width: 105px; height: 80px; object-fit: cover;" /></a></a>
     
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -35,7 +35,7 @@
                     <li class="nav-item nav-profile ">
                        
                             <div class="nav-profile-text">
-                                <p class="mb-1 text-black">User ad soyad</p>
+                            <p class="mb-1 text-black">@User.FindFirst("Name")?.Value</p>
                             </div>
                  
                       
@@ -47,7 +47,7 @@
                     </li>
                    
                     <li class="nav-item nav-logout d-none d-lg-block">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" asp-controller="Login" asp-action="LogOut" >
                             <i class="mdi mdi-power"></i>
                         </a>
                     </li>
@@ -60,7 +60,7 @@
         </nav>
         <div class="container-fluid page-body-wrapper">
             
-           @await Html.PartialAsync("~/Views/User/UserNavbarPartial.cshtml")
+           @await Html.PartialAsync("~/Views/User/AdminNavbarPartial.cshtml")
             <div class="main-panel">
                 <div class="content-wrapper"> @RenderBody()</div>
             </div>

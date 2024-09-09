@@ -26,7 +26,7 @@ namespace BlogAPP.Controllers
             {
                 await _dbContext.Users.AddAsync(user);
                 await _dbContext.SaveChangesAsync();
-                return RedirectToAction("UserList");
+                return RedirectToAction("Login","Login");
 
             }
         

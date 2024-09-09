@@ -28,8 +28,8 @@ namespace BlogAPP.Models
 
         public DateTime Created_at { get; set; } = DateTime.Now;
 
-        List<Comment> Comments { get; set; }
-        List<Like> Likes { get; set; }
+        public List<Comment>? Comments { get; set; }
+        public List<Like>? Likes { get; set; }
 
     }
 }

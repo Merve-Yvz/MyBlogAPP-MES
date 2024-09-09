@@ -1,10 +1,10 @@
-﻿
+﻿﻿
 @model List<BlogAPP.Models.Blog>
 
 <div class="bg-black">
     <h1 class="text-center bg-dark text-light p-1 text-uppercase">WELCOME @ViewBag.UserFullName!</h1>
 
-<div class="container-fluid" style="padding: 0;">
+    <div class="container-fluid" style="padding: 0;">
         <div style="padding: 0; margin: 0; width: 100%;">
             <img src="/Homeimage.gif" style="width: 100%; display: block; object-fit: cover;">
         </div>
@@ -20,8 +20,9 @@
         {
             @foreach (var blog in Model)
             {
-                @if(blog.BlogStatus){
-               
+                @if (blog.BlogStatus)
+                {
+
                     <div class="col-md-4 mb-4 d-flex align-items-stretch">
                         <div class="card w-100">
                             <div class="card-img-top position-relative">
@@ -39,39 +40,25 @@
                                 </p>
                                 <div>
                                     @{
-                                    var shortcontent = blog.BlogContent;
+                                        var shortcontent = blog.BlogContent;
                                     }
 
                                     @if (!string.IsNullOrEmpty(shortcontent) && shortcontent.Length > 190)
-                                {
-                                // İçeriği kısalt
-                                    var truncatedContent = blog.BlogContent.Substring(0, 190);
-                                    var lastSpaceIndex = truncatedContent.LastIndexOf(" ");
+                                    {
+                                        // İçeriği kısalt
+                                        var truncatedContent = blog.BlogContent.Substring(0, 190);
+                                        var lastSpaceIndex = truncatedContent.LastIndexOf(" ");
 
-                                    shortcontent = lastSpaceIndex > 0
-                                    ? shortcontent.Substring(0, lastSpaceIndex)
-                                : truncatedContent;
-                                    shortcontent += ". . .";
-                                }
+                                        shortcontent = lastSpaceIndex > 0
+                                        ? shortcontent.Substring(0, lastSpaceIndex)
+                                        : truncatedContent;
+                                        shortcontent += ". . .";
+                                    }
 
                                     <p class="text-dark text-center mt-5">@Html.Raw(shortcontent)</p>
                                 </div>
                             </div>
-                            @if (User.IsInRole("User")){
-
-                            <button type="button" class="btn btn-link" onclick="toggleLike(@blog.BlogID, this)" onfocus="changeStyleOnFocus(this)">
-                                @if (ViewBag.LikedBlogIds.Contains(@blog.BlogID))
-                                    {
-                                <i class="bi bi-hand-thumbs-up-fill"></i>
-
-                                    }
-                                    else
-                                    {
-                                <i class="bi bi-hand-thumbs-up"></i>
-
-                                    }
-                            </button>
-                            }
+                           
                             <div class="card-footer mt-auto">
                                 <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@blog.BlogID" class="btn btn-primary bg-gradient border-0 form-control">Details</a>
                             </div>
@@ -82,31 +69,3 @@
         }
     </div>
 </div>
-
-<script>
-    function changeStyleOnFocus(button) {
-        
-        button.style.boxShadow = "none";
-
-
-    }
-
-function toggleLike(blogId, button) {
-    $.ajax({
-        url: '@Url.Action("ToggleLike", "Like")',
-        method: 'POST',
-        data: { blogId: blogId },
-        success: function (response) {
-            var icon = $(button).find("i");
-            if (response.isLiked) {
-                icon.removeClass("bi-hand-thumbs-up").addClass("bi-hand-thumbs-up-fill");
-            } else {
-                icon.removeClass("bi-hand-thumbs-up-fill").addClass("bi-hand-thumbs-up");
-            }
-        },
-        error: function () {
-            alert("Try Again Please.");
-        }
-    });
-}
-</script>

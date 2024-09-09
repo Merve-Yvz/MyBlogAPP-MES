@@ -19,14 +19,16 @@ namespace BlogAPP.Services
             _configuration = configuration;
         }
 
-        public string GenerateJwtToken(string email, string role)
+        public string GenerateJwtToken(string email, string role,string name)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            
 
             var claims = new[]{
                  new Claim(ClaimTypes.NameIdentifier,email),
-                 new Claim(ClaimTypes.Role,role)
+                 new Claim(ClaimTypes.Role,role),
+                 new Claim("Name",name)
             };
             var token = new JwtSecurityToken(
                 _configuration["Jwt:Issuer"],

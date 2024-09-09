@@ -1,5 +1,6 @@
 ﻿@{
-    var isAdminLayout = (bool)ViewData["IsAdminLayout"];
+    var isAdminLayout = User.IsInRole("Admin");
+
     Layout = isAdminLayout ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -50,12 +51,11 @@
 
 @section Scripts{
     <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'anchor autolink charmap codesample emoticons lists  table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate  mentions  tableofcontents footnotes mergetags autocorrect  inlinecss markdown',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough  |spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent',
-            
-        });
+       tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+  });
     </script>
     @{
         <partial name="_ValidationScriptsPartial" />

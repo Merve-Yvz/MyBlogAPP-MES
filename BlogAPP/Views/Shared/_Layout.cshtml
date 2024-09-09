@@ -29,28 +29,42 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
                                 </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="UpSert">Share Blog</a>
                                 </li>
+                                @if(User.IsInRole("User")){
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="UserBlogs">My Blogs</a>
-                            </li>                        </ul>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="BlogListByWriter">My Blogs</a>
+                                    </li>
+                                }           }
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+
+                            </li>}
+                            </ul>
                     </div>
                     <div>
                         <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login"><i class="bi bi-person-fill-lock"></i> Sign In</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register"><i class="bi bi-person-video2"></i> Register</a>
-                            </li>
-                           
+                            
+                           @if(User.Identity.IsAuthenticated){
                                 <li class="nav-item">
 
                                 <a class="nav-link text-dark" asp-controller="Login" asp-action="LogOut"><i class="bi bi-person-lock"></i> Logout</a>
                                 </li>
                             
-
+                           }
+                           else{
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login"><i class="bi bi-person-fill-lock"></i> Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register"><i class="bi bi-person-video2"></i> Register</a>
+                                </li>
+                           }
                         </ul>
                     </div>
                     

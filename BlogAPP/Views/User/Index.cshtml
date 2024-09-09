@@ -1,11 +1,13 @@
 ﻿@{
-    var isAdminLayout = (bool)ViewData["IsAdminLayout"];
-    Layout = isAdminLayout ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_Layout.cshtml";
+    
+    Layout ="~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 @model List<BlogAPP.Models.User>
+<div class="d-flex justify-content-between">
+    <h1>Users</h1>
+    <a asp-controller="User" asp-action="UserCreate">User Create</a></div>
 
-<h1>Users</h1>
 <div class="table-responsive">
 <table class="table table-bordered">
     <thead>
@@ -39,7 +41,7 @@
                     <a class="btn btn-warning" asp-controller="User" asp-action="UserEdit" asp-route-id="@user.UserID">Edit</a>
                 </td>
                 <td>
-                   <a class="btn btn-danger" asp-controller="User" asp-action="UserEdit" asp-route-id="@user.UserID">Delete</a>
+                        <a class="btn btn-danger" asp-controller="User" asp-action="DeleteUser" asp-route-userID="@user.UserID">Delete</a>
              
                 </td>
 

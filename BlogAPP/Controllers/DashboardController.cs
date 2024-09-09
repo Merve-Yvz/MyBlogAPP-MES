@@ -1,13 +1,16 @@
 ﻿using BlogAPP.Data;
 using BlogAPP.Models;
 using BlogAPP.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Packaging.Signing;
+using System.Security.Claims;
 
 namespace BlogAPP.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class DashboardController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -18,7 +21,7 @@ namespace BlogAPP.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var userEmail = User.Identity.Name;
+            var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var userID= await _db.Users.Where(x=>x.UserEmail==userEmail).Select(y=>y.UserID).FirstOrDefaultAsync();
             ViewBag.BlogCount = await _db.Blogs.CountAsync();
             ViewBag.AdminBlogCount = await _db.Blogs.Where(c => userID == c.UserID).CountAsync();
