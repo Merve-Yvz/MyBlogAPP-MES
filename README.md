@@ -30,7 +30,7 @@ A Web API service for a platform where users can share content on specific subje
 
 ## Note
 
-📝 UI images associated with the application are located in the `\wwwroot\images\AppPhotos\` directory.
+📝 UI images associated with the application are located in the `BlogAPP\wwwroot\images\AppPhotos\` directory.
 
 
 ## Acknowledgements

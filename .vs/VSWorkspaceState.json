@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BlogAPP",
-    "\\BlogAPP\\Models",
-    "\\BlogAPP\\Models\\ViewModel",
-    "\\BlogAPP\\Services",
-    "\\BlogAPP\\Views",
-    "\\BlogAPP\\Views\\Home",
-    "\\BlogAPP\\Views\\Login",
-    "\\BlogAPP\\Views\\Shared",
-    "\\BlogAPP\\Views\\User"
+    "\\BlogAPP"
   ],
-  "SelectedNode": "\\BlogAPP.sln",
   "PreviewInSolutionExplorer": false
 }
