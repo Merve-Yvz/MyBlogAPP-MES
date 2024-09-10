@@ -19,6 +19,11 @@ builder.Services.AddControllersWithViews();
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("RedisConn");
+    options.InstanceName = "Blog_";
+});
 
 builder.Services.AddSession(options =>
 {

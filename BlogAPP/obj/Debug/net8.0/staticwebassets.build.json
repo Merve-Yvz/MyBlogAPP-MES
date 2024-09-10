@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NvMLdcmsb1YuY9BaD9Y3Jows1bDbhXyOgdOlUNhUoXk=",
+  "Hash": "0cZW0K2BzGZsgxVlSv+QgkJwFTPM854qlF8TLd9YL5c=",
   "Source": "BlogAPP",
   "BasePath": "_content/BlogAPP",
   "Mode": "Default",
@@ -9838,25 +9838,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Logo.png"
-    },
-    {
-      "Identity": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\purple-free.zip",
-      "SourceId": "BlogAPP",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\",
-      "BasePath": "_content/BlogAPP",
-      "RelativePath": "purple-free.zip",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\purple-free.zip"
     }
   ]
 }

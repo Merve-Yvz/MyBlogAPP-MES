@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlogAPP.Models
@@ -10,10 +11,13 @@ namespace BlogAPP.Models
 
         public int CommentID { get; set; }
         [ForeignKey("CommentID")]
+        [JsonIgnore]
+
         public Comment? Comment { get; set; }
 
         public int BlogID { get; set; }
         [ForeignKey("BlogID")]
+        [JsonIgnore]
         public Blog? Blog { get; set; }
 
         public int UserID { get; set; }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace BlogAPP.Models
 {
@@ -27,8 +29,11 @@ namespace BlogAPP.Models
         public bool BlogStatus { get; set; } = true;
 
         public DateTime Created_at { get; set; } = DateTime.Now;
+        [JsonIgnore]
 
         public List<Comment>? Comments { get; set; }
+       
+
         public List<Like>? Likes { get; set; }
 
     }

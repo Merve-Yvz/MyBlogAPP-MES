@@ -5,6 +5,8 @@ using BlogAPP.Models.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 using System.Security.Claims;
@@ -16,11 +18,13 @@ namespace BlogAPP.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _db;
+        private readonly IDistributedCache _cache;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db, IDistributedCache cache)
         {
             _db = db;
             _logger = logger;
+            _cache = cache;
         }
 
 
@@ -46,42 +50,81 @@ namespace BlogAPP.Controllers
 
             return View(blogs);
         }
+		
 
-        public IActionResult BlogDetails(int id)
-        {
+
+
+		public async Task<IActionResult> BlogDetails(int id)
+		{
 			var userIDString = HttpContext.Session.GetString("UserID");
+			var blogDetail = await _db.Blogs
+				.Include(b => b.Likes)
+				.Include(b => b.Comments)
+				.FirstOrDefaultAsync(b => b.BlogID == id);
 
-			BlogDetailViewModel model = new BlogDetailViewModel();
+			if (blogDetail == null)
+			{
+				return NotFound();
+			}
 
-            model.Blog = _db.Blogs
-                  .Include(b => b.Likes)       
-                  .Include(b => b.Comments)   
-                  .FirstOrDefault(u => u.BlogID == id);
+			var model = new BlogDetailViewModel
+			{
+				Blog = blogDetail
+			};
 
 			if (userIDString != null)
 			{
 				var userID = int.Parse(userIDString);
+				var userLikesCacheKey = $"UserLikes_{userID}";
 
-				var likedBlogIds = _db.Likes
-								.Where(l => l.UserID == userID)
-								.Select(l => l.BlogID)
-								.ToList();
+				var likedBlogIdsFromCache = await _cache.GetStringAsync(userLikesCacheKey);
+				List<int> likedBlogIds;
+
+				if (!string.IsNullOrEmpty(likedBlogIdsFromCache))
+				{
+					try
+					{
+						likedBlogIds = JsonConvert.DeserializeObject<List<int>>(likedBlogIdsFromCache) ?? new List<int>();
+					}
+					catch (JsonException)
+					{
+						likedBlogIds = new List<int>();
+					}
+				}
+				else
+				{
+					likedBlogIds = await _db.Likes
+						.Where(l => l.UserID == userID)
+						.Select(l => l.BlogID)
+						.ToListAsync();
+
+					try
+					{
+						var userLikesToCache = JsonConvert.SerializeObject(likedBlogIds);
+						await _cache.SetStringAsync(userLikesCacheKey, userLikesToCache, new DistributedCacheEntryOptions
+						{
+							AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+						});
+					}
+					catch (JsonException ex)
+					{
+						Console.WriteLine($"Serialization error: {ex.Message}");
+					}
+				}
+
 				ViewBag.LikedBlogIds = likedBlogIds;
-
 			}
+			else
+			{
+				ViewBag.LikedBlogIds = new List<int>();
+			}
+
 			return View(model);
-        }
+		}
 
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+
+
     }
 }

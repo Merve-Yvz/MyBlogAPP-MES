@@ -1825,10 +1825,6 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\purple-free.zip",
-      "PackagePath": "staticwebassets\\purple-free.zip"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlogAPP.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
