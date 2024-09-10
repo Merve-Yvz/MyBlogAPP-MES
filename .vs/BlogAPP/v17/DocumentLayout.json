@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\views\\home\\blogdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\views\\home\\blogdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\services\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\services\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\models\\like.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\models\\like.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|c:\\users\\merve\\desktop\\staj2-mert yaz\u0131l\u0131m\\blogapp\\blogapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC3E204D-E8D0-45CF-B478-62D1412FAE2A}|BlogAPP\\BlogAPP.csproj|solutionrelative:blogapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,105 +35,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Category\\Index.cshtml",
-              "RelativeDocumentMoniker": "BlogAPP\\Views\\Category\\Index.cshtml",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Category\\Index.cshtml",
-              "RelativeToolTip": "BlogAPP\\Views\\Category\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAACYAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-10T10:47:34.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BlogDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Home\\BlogDetails.cshtml",
-              "RelativeDocumentMoniker": "BlogAPP\\Views\\Home\\BlogDetails.cshtml",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Views\\Home\\BlogDetails.cshtml",
-              "RelativeToolTip": "BlogAPP\\Views\\Home\\BlogDetails.cshtml",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAkwH4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-10T09:04:30.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Blog.cs",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\Blog.cs",
-              "RelativeDocumentMoniker": "BlogAPP\\Models\\Blog.cs",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\Blog.cs",
-              "RelativeToolTip": "BlogAPP\\Models\\Blog.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAswB8AAAAIAAAAAAAAAA==",
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Controllers\\BlogController.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "BlogAPP\\Controllers\\BlogController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAkwAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T08:56:03.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Like.cs",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\Like.cs",
-              "RelativeDocumentMoniker": "BlogAPP\\Models\\Like.cs",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Models\\Like.cs",
-              "RelativeToolTip": "BlogAPP\\Models\\Like.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T08:53:17.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\appsettings.json",
-              "RelativeDocumentMoniker": "BlogAPP\\appsettings.json",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\appsettings.json",
-              "RelativeToolTip": "BlogAPP\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-10T06:53:04.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Program.cs",
-              "RelativeDocumentMoniker": "BlogAPP\\Program.cs",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Program.cs",
-              "RelativeToolTip": "BlogAPP\\Program.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAIBJwBgAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T06:46:41.231Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LikeController.cs",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\LikeController.cs",
-              "RelativeDocumentMoniker": "BlogAPP\\Controllers\\LikeController.cs",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\LikeController.cs",
-              "RelativeToolTip": "BlogAPP\\Controllers\\LikeController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCcAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T06:25:49.677Z",
+              "WhenOpened": "2024-09-10T11:02:45.91Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "BlogAPP\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "BlogAPP\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAUwG4AAAAtAAAAAAAAAA==",
+              "Title": "LikeController.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\LikeController.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Controllers\\LikeController.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\LikeController.cs",
+              "RelativeToolTip": "BlogAPP\\Controllers\\LikeController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T06:18:47.174Z",
+              "WhenOpened": "2024-09-10T10:58:32.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Authentication.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Services\\Authentication.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Services\\Authentication.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Services\\Authentication.cs",
+              "RelativeToolTip": "BlogAPP\\Services\\Authentication.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAiwB8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T10:56:32.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "BlogAPP\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yaz\u0131l\u0131m\\BlogAPP\\BlogAPP\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "BlogAPP\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwGQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T10:56:10.635Z",
               "EditorCaption": ""
             }
           ]
