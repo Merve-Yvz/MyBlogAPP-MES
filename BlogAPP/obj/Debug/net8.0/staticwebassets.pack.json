@@ -1581,20 +1581,48 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\ScreenshotCategories.png",
-      "PackagePath": "staticwebassets\\images\\AppPhotos\\ScreenshotCategories.png"
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\AdminHome.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\AdminHome.png"
     },
     {
-      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\ScreenshotHome.png",
-      "PackagePath": "staticwebassets\\images\\AppPhotos\\ScreenshotHome.png"
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\AdminPanel.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\AdminPanel.png"
     },
     {
-      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\ScreenshotHome2.png",
-      "PackagePath": "staticwebassets\\images\\AppPhotos\\ScreenshotHome2.png"
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\BlogDetail.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\BlogDetail.png"
     },
     {
-      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\ScreenshotLogin.png",
-      "PackagePath": "staticwebassets\\images\\AppPhotos\\ScreenshotLogin.png"
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\BlogShare.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\BlogShare.png"
+    },
+    {
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\Categories.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\Categories.png"
+    },
+    {
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\Home.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\Home.png"
+    },
+    {
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\Home2.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\Home2.png"
+    },
+    {
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\Login.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\Login.png"
+    },
+    {
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\MyBlogs.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\MyBlogs.png"
+    },
+    {
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\RegisterScreen.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\RegisterScreen.png"
+    },
+    {
+      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\AppPhotos\\Users.png",
+      "PackagePath": "staticwebassets\\images\\AppPhotos\\Users.png"
     },
     {
       "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\Bloglogo.png",
@@ -1603,10 +1631,6 @@
     {
       "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\phone-bomb-1.webp",
       "PackagePath": "staticwebassets\\images\\phone-bomb-1.webp"
-    },
-    {
-      "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\images\\İNDİRİM.gif",
-      "PackagePath": "staticwebassets\\images\\İNDİRİM.gif"
     },
     {
       "Id": "C:\\Users\\merve\\Desktop\\Staj2-Mert Yazılım\\BlogAPP\\BlogAPP\\wwwroot\\js\\site.js",

@@ -18,8 +18,6 @@ namespace BlogAPP.Controllers
 		private readonly ILogger<User> _logger;
 		private readonly IDistributedCache _cache;
 
-
-
 		public LoginController(IConfiguration configuration, ApplicationDbContext dbContext, Authentication authentication, ILogger<User> logger, IDistributedCache cache)
         {
             _configuration = configuration;

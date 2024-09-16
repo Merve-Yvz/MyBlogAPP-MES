@@ -1,11 +1,10 @@
 ﻿@model BlogAPP.Models.ViewModel.BlogDetailViewModel
+
 <form method="post" asp-controller="Comment" asp-action="AddComment">
     <input type="hidden" name="Comment.BlogID" value="@Model.Blog.BlogID" />
-
-   
     <div class="form-group">
         <label for="CommentText">Share Your Comment</label>
-        <input class="form-control mb-2" asp-for="@Model.Comment.CommentUserName" placeholder="User Name.." required/>
+        <input class="form-control mb-2" asp-for="@Model.Comment.CommentUserName" placeholder="User Name.." required />
         <textarea class="form-control mb-2" asp-for="@Model.Comment.CommentContent" rows="3" required placeholder="What are your thoughts?"></textarea>
     </div>
 

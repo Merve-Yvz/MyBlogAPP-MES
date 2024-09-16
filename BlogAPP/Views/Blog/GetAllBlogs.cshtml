@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "GetAllBlogs";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -32,12 +31,14 @@
                 <td>@blog.BlogID</td>
                 <td>@blog.BlogTitle</td>
                 <td>
-                    @{
-                        var truncatedContent = blog.BlogContent.Length > 50
-                        ? blog.BlogContent.Substring(0, 50) + "..."
-                        : blog.BlogContent;
-                    }
-                    @Html.Raw(@truncatedContent)
+                    <span>
+                            @{
+                                var truncatedContent = blog.BlogContent.Length > 100
+                                ? blog.BlogContent.Substring(0, 100) + "..."
+                                : blog.BlogContent;
+                            }
+                            @Html.Raw(@truncatedContent)
+                    </span>
                 </td>
                 <td>@blog.BlogImage</td>
                 <td>@blog.Category.CategoryName</td>

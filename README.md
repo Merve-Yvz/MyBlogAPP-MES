@@ -24,7 +24,7 @@ A Web API service for a platform where users can share content on specific subje
 * Registered users can like blogs and share content.
 * Users can list blogs by category.
 
-![AdminHome](wwwroot/images/AppPhotos/AdminHome.png)
+![AdminHome](BlogAPP/wwwroot/images/AppPhotos/AdminHome.png)
 
 
 

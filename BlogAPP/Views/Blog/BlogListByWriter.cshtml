@@ -3,6 +3,7 @@
     Layout = isAdminLayout ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_Layout.cshtml";
 }
 
+
 @model List<BlogAPP.Models.Blog>
 
 <h1>My Blogs</h1>
@@ -23,19 +24,22 @@
         </thead>
         <tbody>
             @foreach (var blog in Model)
-            {
+            {  
                
                 <tr>
                     <td>@blog.BlogID</td>
                     <td>@blog.BlogTitle</td>
                     <td>
-                        @{
-                        var truncatedContent = blog.BlogContent.Length > 50
-                        ? blog.BlogContent.Substring(0, 50) + "..."
-                        : blog.BlogContent;
-                        }
-                        @truncatedContent
+                        <span>
+                            @{
+                                var truncatedContent = blog.BlogContent.Length > 100
+                                ? blog.BlogContent.Substring(0, 100) + "..."
+                                : blog.BlogContent;
+                            }
+                            @Html.Raw(@truncatedContent)
+                        </span>
                     </td>
+
                     <td>@blog.BlogImage</td>
                     <td>@blog.Category.CategoryName</td>
                     <td>@blog.BlogStatus</td>

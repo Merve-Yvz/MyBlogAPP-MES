@@ -10,7 +10,6 @@ using System.Security.Claims;
 
 namespace BlogAPP.Controllers
 {
-    //[Authorize]
     public class BlogController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -58,8 +57,10 @@ namespace BlogAPP.Controllers
         [HttpPost]
         public IActionResult Upsert(BlogCategoryViewModel blogVM, IFormFile? file)
         {
+            var userId = HttpContext.Session.GetString("UserID");
             if (ModelState.IsValid)
             {
+                blogVM.Blog.UserID = int.Parse(userId);
                 if (file != null && file.Length > 0)
                 {
                     var fileName = Path.GetFileName(file.FileName);
@@ -90,7 +91,7 @@ namespace BlogAPP.Controllers
                 _db.SaveChanges();
                 TempData["success"] = "Blog created/updated successfully.";
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("BlogListByWriter");
             }
             else
             {
@@ -111,7 +112,7 @@ namespace BlogAPP.Controllers
             _db.Blogs.Remove(blog);
             _db.SaveChanges();
 
-            return RedirectToAction("GetAllBlogs");
+            return RedirectToAction("BlogListByWriter");
         }
         public IActionResult BlogListByWriter()
         {

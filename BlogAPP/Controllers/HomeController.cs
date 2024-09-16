@@ -1,4 +1,3 @@
-
 using BlogAPP.Data;
 using BlogAPP.Models;
 using BlogAPP.Models.ViewModel;
@@ -30,9 +29,6 @@ namespace BlogAPP.Controllers
 
         public async Task<IActionResult> Index()
         {
-            //var userEmail = User.Identity.Name;
-            //var user = _db.Users
-            //          .FirstOrDefault(u => u.UserEmail == userEmail);
             var userName = HttpContext.Session.GetString("UserName");
             var userSurname = HttpContext.Session.GetString("UserSurname");
             var userIDString = HttpContext.Session.GetString("UserID");
@@ -41,7 +37,7 @@ namespace BlogAPP.Controllers
             var blogs = await _db.Blogs
                                  .Include(b => b.Category)
                                  .Include(b => b.User)
-                                 .OrderByDescending(b => b.Created_at) // sort by creation date
+                                 .OrderByDescending(b => b.Created_at) 
                                  .Take(3) // latest 3 blogs
                                  .ToListAsync();
            

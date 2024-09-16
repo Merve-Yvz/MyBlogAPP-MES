@@ -6,12 +6,13 @@
 
 
 @model BlogAPP.Models.ViewModel.BlogCategoryViewModel
+
 <div class="container">
 <h1>Blog @(Model.Blog.BlogID!=0?"Update":"Create") Screen</h1>
 <form method="post" enctype="multipart/form-data">
     <label asp-for="Blog.UserID" hidden></label>
     <input asp-for="Blog.UserID" class="form-control" type="hidden"/>
-  
+    <input asp-for="Blog.BlogID" class="form-control" type="hidden" />
 
     <label asp-for="Blog.BlogTitle"></label>
     <input asp-for="Blog.BlogTitle" class="form-control" />
