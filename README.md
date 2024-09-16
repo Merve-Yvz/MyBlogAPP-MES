@@ -35,4 +35,4 @@ A Web API service for a platform where users can share content on specific subje
 
 ## Acknowledgements
 
-🌟 I would like to express my gratitude to Atakan Göçer for his support in this project.
+🌟 I would like to express my gratitude to Mr. Atakan Göçer for his support and assistance with this project. This project has significantly developed my skills and provided the opportunity to learn technologies I had never used before.
