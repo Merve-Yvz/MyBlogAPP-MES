@@ -12,10 +12,11 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("23b5e578-9af1-4044-a7e8-75b597abfb78")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlogAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+900cfe350e622932df0612b1daee27250a331783")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad80da8bdefd92f0d5bf4cc2e2cfb300e5f9b11d")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlogAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlogAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

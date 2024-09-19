@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BlogAPP"
+    "\\BlogAPP",
+    "\\BlogAPP\\Controllers"
   ],
   "SelectedNode": "\\BlogAPP.sln",
   "PreviewInSolutionExplorer": false

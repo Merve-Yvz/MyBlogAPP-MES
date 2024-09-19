@@ -1,0 +1,6 @@
+services:
+  blogapp:
+    image: ${DOCKER_REGISTRY-}blogapp
+    build:
+      context: BlogAPP
+      dockerfile: Dockerfile
